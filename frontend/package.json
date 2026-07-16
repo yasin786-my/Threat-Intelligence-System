@@ -1,0 +1,23 @@
+{
+    "scripts": {
+        "dev": "vite --host 0.0.0.0",
+        "build": "vite build",
+        "preview": "vite preview --host 0.0.0.0"
+    },
+    "dependencies": {
+        "@vitejs/plugin-react": "latest",
+        "axios": "latest",
+        "chart.js": "latest",
+        "lucide-react": "latest",
+        "react": "latest",
+        "react-chartjs-2": "latest",
+        "react-dom": "latest",
+        "socket.io-client": "latest"
+    },
+    "devDependencies": {
+        "vite": "latest",
+        "tailwindcss": "latest",
+        "postcss": "latest",
+        "autoprefixer": "latest"
+    }
+}

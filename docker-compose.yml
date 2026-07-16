@@ -1,0 +1,20 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes: [mongo_data:/data/db]
+  backend:
+    build: ./backend
+    environment:
+      MONGO_URI: mongodb://mongo:27017/
+      SECRET_KEY: change-me-before-public-deployment
+    depends_on: [mongo]
+    ports: ["5000:5000"]
+    volumes:
+      - ./backend/models:/app/models:ro
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["5173:80"]
+volumes:
+  mongo_data:
